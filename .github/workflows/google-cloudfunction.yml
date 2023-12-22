@@ -25,6 +25,7 @@ jobs:
       with:
         name: 'my-function'
         runtime: 'python311'
+        entry_point: "hello_world"
 
     # Example of using the output
     - id: 'test'
