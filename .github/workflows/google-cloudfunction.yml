@@ -26,7 +26,7 @@ jobs:
         name: 'my-function'
         runtime: 'python311'
         entry_point: "hello_world"
-        source_dir: src
+        source_dir: './src'
 
     # Example of using the output
     - id: 'test'
