@@ -1,4 +1,4 @@
-import main
+import src.main as main
 import unittest
 import json
 from unittest.mock import Mock

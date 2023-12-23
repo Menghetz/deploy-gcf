@@ -24,6 +24,7 @@ jobs:
       uses: 'google-github-actions/deploy-cloud-functions@v2'
       with:
         name: 'my-function'
+        source_dir: 'src'
         runtime: 'python311'
 
     # Example of using the output
