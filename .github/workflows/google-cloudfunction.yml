@@ -20,14 +20,21 @@ jobs:
         workload_identity_provider: 'projects/261692249756/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
         service_account: 'github-action@amazon-tracker-264915.iam.gserviceaccount.com'
         token_format: 'access_token'
-
-    - id: 'deploy'
-      uses: 'google-github-actions/deploy-cloud-functions@v2'
-      with:
-        name: 'my-function'
-        runtime: 'python311'
-        entry_point: "hello_world"
-        source_dir: './src'
+    - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+        with:
+          version: '>= 363.0.0'
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
+    - name: 'Deploy to gen2 cloud function'
+        run:  |
+          gcloud functions deploy my-function \
+          --gen2 \
+          --region=us-east1 \
+          --runtime=python310 \
+          --source=src \
+          --entry-point=hello_world \
+          --trigger-http
 
     # Example of using the output
     - id: 'test'
