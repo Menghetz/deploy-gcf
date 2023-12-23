@@ -32,6 +32,7 @@ jobs:
           --region=us-east1 \
           --runtime=python310 \
           --source=src \
+          --allow-unauthenticated \
           --entry-point=hello_world \
           --trigger-http
 
