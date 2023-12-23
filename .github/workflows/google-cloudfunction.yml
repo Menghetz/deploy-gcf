@@ -27,7 +27,7 @@ jobs:
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
     - name: 'Deploy to gen2 cloud function'
-        run:  |
+      run:  |
           gcloud functions deploy my-function \
           --gen2 \
           --region=us-east1 \
