@@ -10,7 +10,7 @@ class TestCalculations(unittest.TestCase):
         req = Mock(get_json=Mock(return_value=data), args=data)
 
         # Call tested function
-        assert main.hello_world(req) == "Hello world!"
+        assert main.hello_world(req) == "Hello World!"
 
     def test_print_name(self):
         name = "Bob"
