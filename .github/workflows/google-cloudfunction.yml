@@ -35,6 +35,7 @@ jobs:
           --allow-unauthenticated \
           --entry-point=hello_world \
           --memory=256MB \
+          --max-instances=3 \
           --trigger-http
 
     # Example of using the output
